@@ -3,9 +3,10 @@ import { MESSAGES, optimalAttempts } from '../game/engine.js';
 function strategyNote({ status, attempts, maxAttempts, min, max }) {
   const par = optimalAttempts(min, max);
   if (status === 'won') {
-    return attempts <= par
-      ? `Halving the range every time needs at most ${par} guesses here. You matched it.`
-      : `Halving the range every time needs at most ${par} guesses here.`;
+    const base = `Halving the range every time needs at most ${par} guesses here.`;
+    if (attempts < par) return `${base} You beat that.`;
+    if (attempts === par) return `${base} You matched it.`;
+    return base;
   }
   return maxAttempts >= par
     ? `With ${maxAttempts} attempts, halving the remaining range every guess always finds it.`
