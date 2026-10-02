@@ -1,0 +1,35 @@
+name: Bug report
+description: Something isn't working as expected.
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the bug and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open settings and choose 1 to 1000 with 5 attempts
+        2. Guess 500
+        3. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Which version?
+      options:
+        - Web app
+        - Terminal (npm run cli)
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser / OS / Node version
+      placeholder: e.g. Firefox 140 on Windows 11, or Node 22 on macOS
