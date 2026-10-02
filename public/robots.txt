@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://number-guessing-game-fz17.vercel.app/sitemap.xml

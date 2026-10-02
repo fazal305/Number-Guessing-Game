@@ -2,7 +2,7 @@
 
 A small logic game: the computer picks a secret number and you find it in as few guesses as you can, guided by "too high" and "too low" hints. It runs in the browser and in any terminal, and both versions share the same game engine.
 
-**Live demo:** not deployed yet. See [Deployment](#deployment).
+**Live demo:** [number-guessing-game-fz17.vercel.app](https://number-guessing-game-fz17.vercel.app/)
 
 ![Desktop view of a game in progress: the range tracker has narrowed to 73–78, with a log of four guesses](docs/screenshots/desktop-light.png)
 
@@ -91,11 +91,7 @@ The project is set up for [Vercel](https://vercel.com/). `vercel.json` sets the 
 
 1. Import the repository in Vercel. The settings are detected from `vercel.json`.
 2. Make sure Deployment Protection is off for the production URL so the game is public.
-3. After the first deploy, put the live URL in:
-   - the **Live demo** link at the top of this README
-   - `index.html`: add `<link rel="canonical">` and `og:url`, and make the `og:image` / `twitter:image` URLs absolute
-   - `public/robots.txt` and a new `public/sitemap.xml`
-   - the repository's "Website" field on GitHub
+3. If you deploy under a different URL, update it in `index.html` (canonical, `og:url`, image URLs), `public/robots.txt`, `public/sitemap.xml`, and the link at the top of this README.
 
 Any static host works. Serve the `dist/` folder after `npm run build`.
 
